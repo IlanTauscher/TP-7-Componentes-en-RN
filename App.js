@@ -5,14 +5,19 @@ import { StyleSheet, SafeAreaView, ImageBackground, Text, View, Image, TextInput
 export default function App() {
   const fondo  = require('./assets/Hollow.jpg');
   const perfil = require('./assets/perfil.jpg');
-
+          
   const [comment, setComment] = useState('');
   const [darkMode, setDarkMode] = useState(false);
 
   const textColor = darkMode ? 'black' : 'white';
   const label     = darkMode ? 'Claro'  : 'Oscuro';
 
-  const handlePress = () => alert(comment);
+  const handlePress = () =>   {
+    if (comment.trim() === '') {
+    alert('Error, esta vacio');
+  } else {
+    alert(comment);
+  };}
 
   return (
     <SafeAreaView style={styles.container}>
